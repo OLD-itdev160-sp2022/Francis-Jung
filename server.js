@@ -1,7 +1,10 @@
 import express from "express";
+import connectDatabase from "./config/db";
 import res from "express/lib/response";
 
 const app = express();
+
+connectDatabase();
 
 app.get('/', (req, res) =>
     res.send('http get request sent to root api endpoint')
